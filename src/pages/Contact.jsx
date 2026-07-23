@@ -1,77 +1,70 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function Contact() {
+// This is the Contact page - it has a simple form.
+function Contact() {
+  // These are "state" variables. React re-renders the page
+  // whenever we update them using setName, setEmail, etc.
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    // Stop the page from refreshing (the default browser behavior for forms)
+    event.preventDefault();
     setSubmitted(true);
   }
 
   return (
     <section className="container">
-      <div className="section-head">
-        <span className="call-number">Get in touch</span>
-        <h1>Contact us</h1>
-        <p>
-          Ask about a special order, a book you can't find, or whether
-          there's room at Thursday's poetry night. We usually reply within a
-          day.
-        </p>
-      </div>
+      <h1>Contact Us</h1>
+      <p>Have a question or feedback? Send us a message below.</p>
 
-      <form className="form-grid" onSubmit={handleSubmit}>
-        <div className="field">
+      <form onSubmit={handleSubmit}>
+        <div>
           <label htmlFor="name">Name</label>
           <input
             id="name"
-            name="name"
             type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
-            value={form.name}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="field">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            value={form.message}
-            onChange={handleChange}
           />
         </div>
 
         <div>
-          <button type="submit" className="btn">Send message</button>
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
 
+        <div>
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn">
+          Send Message
+        </button>
+
         {submitted && (
-          <p className="success-msg">
-            Thanks, {form.name.split(" ")[0] || "friend"} — your message has
-            been noted. We'll write back soon.
+          <p className="success">
+            Thank you, {name}! Your message has been sent.
           </p>
         )}
       </form>
     </section>
   );
 }
+
+export default Contact;

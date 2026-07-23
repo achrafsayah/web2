@@ -1,55 +1,43 @@
-export default function About() {
+import React from "react";
+import { Link } from "react-router-dom";
+
+// This is the About page - a static page with information about the store.
+function About() {
   return (
     <section className="container">
-      <div className="section-head">
-        <span className="call-number">Since 1994</span>
-        <h1>About Fernwood Bindery</h1>
+      <h1>About Us</h1>
+      <p>
+        My Bookstore is a small online shop where we sell books we love.
+        We started this project as a school assignment, but we tried to make
+        it feel like a real bookstore website.
+      </p>
+
+      <div className="about-item">
+        <h2>Our Story</h2>
         <p>
-          We opened as a two-room shop above a hardware store and moved to
-          our current storefront on Harrow Lane in 2011, after a small fire
-          made the decision for us. Everything on our shelves has been read
-          by someone who works here — that's the only rule we've kept for
-          thirty years.
+          We believe everyone should be able to find a book that speaks to
+          them. That's why we keep our collection small and carefully
+          chosen, instead of trying to sell everything.
         </p>
       </div>
 
-      <div className="about-list">
-        <div className="about-item">
-          <span className="call-number">01</span>
-          <div>
-            <h3>How we choose books</h3>
-            <p>
-              No algorithm, no bestseller lists. Our five booksellers each
-              read constantly and bring in what they can't stop talking
-              about. If we haven't read it, we don't shelve it.
-            </p>
-          </div>
-        </div>
+      <div className="about-item">
+        <h2>Our Mission</h2>
+        <p>
+          To make it simple and enjoyable to discover new books, whether
+          you're into fiction, poetry, or learning something new.
+        </p>
+      </div>
 
-        <div className="about-item">
-          <span className="call-number">02</span>
-          <div>
-            <h3>Thursday poetry nights</h3>
-            <p>
-              Every Thursday at 7:30pm we clear the front tables for an open
-              mic. No sign-up sheet — just show up and put your name on the
-              chalkboard.
-            </p>
-          </div>
-        </div>
-
-        <div className="about-item">
-          <span className="call-number">03</span>
-          <div>
-            <h3>Repairs and rebinding</h3>
-            <p>
-              We keep a small bindery in the back room for paperbacks that
-              have earned a second spine. Bring in anything falling apart
-              from too much love.
-            </p>
-          </div>
-        </div>
+      <div className="about-item">
+        <h2>Contact</h2>
+        <p>
+          Have a question? Visit our <Link to="/contact">Contact page</Link> and
+          send us a message.
+        </p>
       </div>
     </section>
   );
 }
+
+export default About;
