@@ -1,2 +1,33 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Enforce line endings for scripts
+*.sh eol=lf
+*.ps1 eol=crlf
+*.bat eol=crlf
+
+# Treat common text files as text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.css text
+*.scss text
+*.html text
+*.json text
+*.md text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tgz binary
+
+# Mark vendored dependencies so GitHub treats them as vendored
+/node_modules/** linguist-vendored
+

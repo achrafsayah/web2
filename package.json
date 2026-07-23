@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "node": "^26.5.0",
+    "react": "^19.2.8",
+    "react-router-dom": "^7.18.1"
+  },
+  "name": "web2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achrafsayah/web2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/achrafsayah/web2/issues"
+  },
+  "homepage": "https://github.com/achrafsayah/web2#readme"
+}
